@@ -36,4 +36,6 @@ const reactElement = {
 //the jsx is converted into an abject just like we have creatd above and then it is rendered by the reactDom library as proper HTMl
 //we can execute a jsx component as JSX() isntead of <JSX /> since <JSX /> is function only but due to convection we follow the <JSX /> syntax and not JSX() syntax. Just make sure that the JSX() is executed independently in the render method of the reactDom library and not inside a JSx fargment or a component otherwise the reactDOM will expect a JSX syntax and not a function syntax
 //we can even execute out custom ReactElement directly as a component without using the JSX syntax since behind the scene the JSX syntax which is lso a function only is converted into a *react element object* but the custom ReactElement object must follow the rules of the given reactDOM render method
+//https://github.com/facebook/react/blob/main/packages/react/src/jsx/ReactJSXElement.js
+//here is how the createreactElement method is defined in the react library
 //so.... just specifying the object syntax that is reactElement should also render the given element as a component
