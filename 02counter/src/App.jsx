@@ -7,6 +7,8 @@ function App() {
   // let counter = count;
   function addValue() {
     setCount(count + 1)
+    //we can even obtain the previous value of the state variable by using a callback function as shown below
+    //setCount((prevCount) => prevCount + 1);
   }
 
   function subValue() {
