@@ -1,5 +1,5 @@
 //Fields required: First Name, Last Name, Username, E-mail, password (show/hide), PhoneNo. (country code ____ number), country (dropdown), city (dropdown), Pan No. & Aadhar No.
-import React, { lazy, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function Form() {
@@ -68,7 +68,7 @@ export default function Form() {
           onChange={handleChange}
           type="text"
           name='LastName'
-          value={formData.LastName}
+          value={formData.lastName}
         />
         {error.lastName && <span>{error.lastName}</span>}
       </div>
