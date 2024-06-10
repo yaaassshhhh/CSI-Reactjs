@@ -9,7 +9,7 @@ export default function Form() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
-    localName: '',
+    lastName: '',
     userName: '',
     email: '',
     password: '',
