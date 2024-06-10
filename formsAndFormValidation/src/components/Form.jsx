@@ -67,7 +67,7 @@ export default function Form() {
         <input 
           onChange={handleChange}
           type="text"
-          name='LastName'
+          name='lastName'
           value={formData.lastName}
         />
         {error.lastName && <span>{error.lastName}</span>}

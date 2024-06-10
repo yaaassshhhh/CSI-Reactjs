@@ -20,7 +20,7 @@ const Success = () => {
         <span style={labelStyle}>Last Name:</span> {formData.lastName}
       </div>
       <div>
-        <span style={labelStyle}>Username:</span> {formData.username}
+        <span style={labelStyle}>Username:</span> {formData.userName}
       </div>
       <div>
         <span style={labelStyle}>E-mail:</span> {formData.email}
