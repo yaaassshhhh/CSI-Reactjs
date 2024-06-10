@@ -50,11 +50,22 @@ export default function Form() {
     setFormData({...formData, [e.target.name]: e.target.value});
   }
 
+  const [isClicked,setIsClicked] = useState(false);
+
+  const buttonStyle = {
+    transition : "trandform 0.2s",
+    transform : isClicked? "scale(0.9)" : "scale(1)"
+  }
+
   return ( <>
+  <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 text-orange-500 bg-gray-700'>
+  <h1 className='text-white text-center my-3 '>Form Submission</h1>
+  
     <form onSubmit={handleSubmit}>
-      <div>
-        <label>First Name :- </label>
+    <div className='flex shadow rounded-lg  space-x-2 overflow-hidden mb-4'>
+        <label className='whitespace-nowrap'>First Name  </label>
         <input 
+          className='outline-none w-full py-1 px-3'
           onChange={handleChange}
           type="text"
           name='firstName'
@@ -62,9 +73,10 @@ export default function Form() {
         />
         {error.firstName && <span>{error.firstName}</span>}
       </div>
-      <div>
-        <label>Last Name :- </label>
+      <div className='flex shadow rounded-lg  space-x-2 overflow-hidden mb-4'>
+        <label className='whitespace-nowrap'>Last Name  </label>
         <input 
+        className='outline-none w-full py-1 px-3'
           onChange={handleChange}
           type="text"
           name='lastName'
@@ -72,9 +84,10 @@ export default function Form() {
         />
         {error.lastName && <span>{error.lastName}</span>}
       </div>
-      <div>
-        <label>Username :- </label>
+      <div className='flex shadow rounded-lg  space-x-2 overflow-hidden mb-4'>
+        <label className='whitespace-nowrap'>Username  </label>
         <input 
+        className='outline-none w-full py-1 px-3'
           onChange={handleChange}
           type="text"
           name='userName'
@@ -82,9 +95,10 @@ export default function Form() {
         />
         {error.userName && <span>{error.userName}</span>}
       </div>
-      <div>
-        <label>Email :- </label>
+      <div className='flex shadow rounded-lg  space-x-2 overflow-hidden mb-4'>
+        <label className='whitespace-nowrap'>Email  </label>
         <input 
+        className='outline-none w-full py-1 px-3'
           onChange={handleChange}
           type="email"
           name='email'
@@ -92,15 +106,23 @@ export default function Form() {
         />
         {error.email && <span>{error.email}</span>}
       </div>
-      <div>
-        <label>Password :-</label>
+      <div className='flex shadow rounded-lg  space-x-2 overflow-hidden mb-4'>
+        <label className='whitespace-nowrap'>Password </label>
         <input 
+        className='outline-none w-full py-1 px-3'
           onChange={handleChange}
           type={showPassword ? 'text' : 'password'}
           name='password'
           value={formData.password}
         />
         <button
+        style={
+            buttonStyle
+          }
+          onMouseDown={()=>setIsClicked(true)}
+          onMouseUp={()=>setIsClicked(false)}
+          onMouseLeave={()=>setIsClicked(false)}
+        className='outline-none bg-blue-700 text-white px-3 py-1.5 shrink-0'
           onClick={
             () => setShowPassword(!showPassword)
           }>
@@ -108,9 +130,10 @@ export default function Form() {
         </button>
         {error.password && <span>{error.password}</span>}
       </div>
-      <div>
-        <label>Phone No :-</label>
+      <div className='flex shadow rounded-lg  space-x-2 overflow-hidden mb-4'>
+        <label className='whitespace-nowrap'>Phone No </label>
         <input 
+        className='outline-none w-full py-1 px-3'
           onChange={handleChange}
           type='number'
           name = "phoneNo"
@@ -118,9 +141,10 @@ export default function Form() {
         />
         {error.phoneNo && <span>{error.phoneNo}</span>}
       </div>
-      <div>
-        <label>Country :-</label>
+      <div className='flex shadow rounded-lg  space-x-2 overflow-hidden mb-4'>
+        <label className='whitespace-nowrap'>Country </label>
         <select
+        className='outline-none w-full py-1 px-3'
           onChange={handleChange}
           name = "country"
           value = {formData.country}
@@ -133,9 +157,10 @@ export default function Form() {
         </select>
         {error.country && <span>{error.country}</span>}
       </div>
-      <div>
-        <label>City :-</label>
+      <div className='flex shadow rounded-lg  space-x-2 overflow-hidden mb-4'>
+        <label className='whitespace-nowrap'>City </label>
         <select
+        className='outline-none w-full py-1 px-3'
           onChange={handleChange}
           name = "city"
           value = {formData.city}
@@ -150,9 +175,10 @@ export default function Form() {
         </select>
         {error.city && <span>{error.city}</span>}
       </div>
-      <div>
-        <label>Pan No :-</label>
+      <div className='flex shadow rounded-lg  space-x-2 overflow-hidden mb-4'>
+        <label className='whitespace-nowrap'>Pan No </label>
         <input 
+        className='outline-none w-full py-1 px-3'
           onChange={handleChange}
           type='text'
           name = "panNo"
@@ -160,9 +186,10 @@ export default function Form() {
         />
         {error.panNo && <span>{error.panNo}</span>}
       </div>
-      <div>
-        <label>Aadhar No :-</label>
+      <div className='flex shadow rounded-lg  space-x-2 overflow-hidden mb-4'>
+        <label className='whitespace-nowrap'>Aadhar No </label>
         <input 
+        className='outline-none w-full py-1 px-3'
           onChange={handleChange}
           type='text'
           name = "aadharNo"
@@ -171,6 +198,13 @@ export default function Form() {
         {error.aadharNo && <span>{error.aadharNo}</span>}
       </div>
       <button
+      style={
+            buttonStyle
+          }
+          onMouseDown={()=>setIsClicked(true)}
+          onMouseUp={()=>setIsClicked(false)}
+          onMouseLeave={()=>setIsClicked(false)}
+      className='outline-none bg-blue-700 text-white px-3 py-1.5 shrink-0 rounded-lg'
         type='submit'
         // disabled ={validate()} cant usse validate as it will run on every render 
         // onClick = {() => navigate('/success')} will not work as we have to validate the form first and will not prevent default behaviour of form submission
@@ -179,6 +213,7 @@ export default function Form() {
         Submit
       </button> 
     </form>
+    </div>
     </>  
   )
 }
