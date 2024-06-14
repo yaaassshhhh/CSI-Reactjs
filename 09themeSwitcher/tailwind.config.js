@@ -10,3 +10,6 @@ export default {
   },
   plugins: [],
 }
+
+// remember to change config in tailwind
+// darkMode: 'class',
