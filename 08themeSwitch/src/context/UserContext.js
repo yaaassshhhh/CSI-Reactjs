@@ -5,6 +5,7 @@ const UserContext  = React.createContext();
 export default UserContext;
 
 //step - 1 create a context in context/userContext.js
+//we can also provide some default state value which will be loaded initially with the context . this is depicted in the next project 09themeSwitcher
 //step - 2 create a provider in coext/userContextProvider.jsx
 //step - 3 wrap the children with the UserContext.provider in userContextProvider.jsx
 //step - 4 we need to pass a value/variable that we are going to pass through the provider in userContextProvider.jsx and it will be passed as a prop to the provider
