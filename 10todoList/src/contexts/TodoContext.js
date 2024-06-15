@@ -11,7 +11,8 @@ export const TodoContext = createContext({
     addTodo:(todo)=>{},
     deleteTodo:(id)=>{},
     updateTodo:(id,todo)=>{},
-    toggleComplete : (id)=>{} 
+    toggleComplete : (id)=>{},
+    sortTodos: (type) => {}
 });
 
 export const TodoProvider = TodoContext.Provider;
