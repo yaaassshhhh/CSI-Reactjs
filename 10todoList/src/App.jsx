@@ -53,8 +53,6 @@ function App() {
     setTodos(sortedTodos)
   }
 
-
-
   const handleChange = (e) => {
     setSoryBy(e.target.value)
     sortTodos(e.target.value)
