@@ -8,7 +8,7 @@ import { useStateContext } from './contexts/ContextProvider.jsx'
 import './App.css'
 
 function App() {
-
+  
   // const activeMenu = true;
   const { activeMenu } = useStateContext()
   return (
