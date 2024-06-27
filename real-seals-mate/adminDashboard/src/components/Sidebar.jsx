@@ -30,7 +30,7 @@ const Sidebar = () => {
             >
               <SiShopware className='text-3xl 
               text-red-500'
-              /> <span>Shoppy</span>
+              /> <span>Fusion</span>
             </Link>
             <TooltipComponent content='Menu' position='BottomCenter'>
             <button type='button' onClick={()=>setActiveMenu((prev)=> !prev)} className='text-xl rounded-full p-3 hover:bg-light-gray mt-4 block '>
