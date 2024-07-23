@@ -24,7 +24,7 @@ export class AuthService {
            }
         } catch (error) {
             throw console.log("Appwrite : createAcount :: ",error );
-        }
+        } 
     }
 
     async login({email,password}:{email:string,password:string}) {
