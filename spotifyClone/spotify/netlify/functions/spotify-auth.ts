@@ -1,22 +1,21 @@
-// netlify/functions/spotify-auth.ts
 import axios from 'axios';
-import querystring from 'querystring';
+import conf from '../../src/conf/conf';
+const CLIENT_ID = conf.ClientId;
+const CLIENT_SECRET = conf.SecretId;
+const REDIRECT_URI = 'http://localhost:5173/callback';
 
-const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID as string;
-const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET as string;
-const REDIRECT_URI = 'http://localhost:3000/callback';
-
-exports.handler = async (event: any, context: any) => {
+export const handler = async (event: any) => {
   const { code } = JSON.parse(event.body);
 
   try {
-    const response = await axios.post('https://accounts.spotify.com/api/token', querystring.stringify({
-      grant_type: 'authorization_code',
-      code,
-      redirect_uri: REDIRECT_URI,
-      client_id: CLIENT_ID,
-      client_secret: CLIENT_SECRET
-    }), {
+    const params = new URLSearchParams();
+    params.append('grant_type', 'authorization_code');
+    params.append('code', code);
+    params.append('redirect_uri', REDIRECT_URI);
+    params.append('client_id', CLIENT_ID);
+    params.append('client_secret', CLIENT_SECRET);
+
+    const response = await axios.post('https://accounts.spotify.com/api/token', params.toString(), {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
